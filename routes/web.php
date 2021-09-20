@@ -25,6 +25,9 @@ Route::get('/home', function () {
 Route::get('/contact', function () {
     return view('users.contact');
 });
+Route::get('/profile2', function () {
+    return view('admin.profile');
+});
 Route::get('/profile', function () {
     return view('users.profile');
 });
