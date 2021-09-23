@@ -41,11 +41,11 @@
     <h3 class="text-2xl text-gray-900 font-semibold">Let us call you!</h3>
     <p class="text-gray-600"> To help you choose your property</p>
     <div class="flex space-x-5 mt-3">
-        <input type="text" name="" id="" placeholder="Your Name" class="border p-2  w-1/2">
-        <input type="tel" name="" id="" placeholder="Your Number" class="border p-2 w-1/2">
+        <input type="text" name="name" id="name" placeholder="Your Name" class="border p-2  w-1/2">
+        <input type="tel" name="phone_number" id="phone_number" placeholder="Your Number" class="border p-2 w-1/2">
     </div>
-    <input type="email" name="" id="" placeholder="Your Email" class="border p-2 w-full mt-3">
-    <textarea name="" id="" cols="10" rows="3" placeholder="Tell us about desired property" class="border p-2 mt-3 w-full"></textarea>
+    <input type="email" name="email" id="email" placeholder="Your Email" class="border p-2 w-full mt-3">
+    <textarea name="describe" id="describe" cols="10" rows="3" placeholder="Tell us about desired property" class="border p-2 mt-3 w-full"></textarea>
     <input type="submit" value="Submit" class="w-full mt-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold p-3">
 
 </form>
