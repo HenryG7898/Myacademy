@@ -155,7 +155,7 @@
                         </a>
                     </div>
                     <div class="px-5 py-2">
-                        <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                        <a href="{{url('contact')}}" class="text-base leading-6 text-gray-500 hover:text-gray-900">
                             Contact Form
                         </a>
                     </div>

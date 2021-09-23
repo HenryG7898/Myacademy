@@ -22,9 +22,9 @@ Route::get('/home', function () {
 //Route::get('/Apply', function () {
 //    return view('users.Applyform');
 //});
-Route::get('/contact', function () {
-    return view('users.contact');
-});
+//Route::get('/contact', function () {
+//    return view('users.contact');
+//});
 Route::get('/profile2', function () {
     return view('admin.profile');
 });
@@ -37,6 +37,9 @@ Route::get('/term', function () {
 Route::get('/admin', function () {
     return view('admin.home');
 });
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+});
 
 
 route::get('Signup',[\App\Http\Controllers\Registercontroller::class, 'view'])->name('users.register');
@@ -47,3 +50,6 @@ route::post('Login',[\App\Http\Controllers\LoginController::class, 'login']);
 
 route::get('Apply',[\App\Http\Controllers\Coursecontroller::class,'view'])->name('ApplyForm');
 //route::post('Apply',[\App\Http\Controllers\Coursecontroller::class, 'login']);
+
+route::get('contact',[\App\Http\Controllers\Contactcontroller::class,'view'])->name('contact');
+route::post('contact',[\App\Http\Controllers\Contactcontroller::class, 'contacts']);
