@@ -36,7 +36,7 @@
                             <div class="overflow-hidden shadow-md">
                                 <!-- card header -->
                                 <div class="px-6 py-4 bg-white border-b border-gray-200 font-bold uppercase">
-                                    What is Lorem Ipsum?
+                                    What is your looking for?
                                 </div>
 
                                 <!-- card body -->
@@ -65,7 +65,7 @@
                             <div class="overflow-hidden shadow-md text-gray-100">
                                 <!-- card header -->
                                 <div class="px-6 py-4 bg-gray-800 border-b border-gray-600 font-bold uppercase">
-                                    What is Lorem Ipsum?
+                                    Which path of career will you choose?
                                 </div>
 
                                 <!-- card body -->
@@ -91,7 +91,7 @@
         </div>
     </div>
     <div class="my-5"></div>
-    <div class="bg-black">
+    <div class="bg-gray-600">
         <section class="text-gray-600 body-font">
             <div class="container px-5 py-24 mx-auto max-w-7x1">
                 <div class="flex flex-wrap w-full mb-4 p-4">
@@ -141,6 +141,14 @@
                             <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
                         </div>
                     </div>
+                    <div class="xl:w-1/3 md:w-1/2 p-4">
+                        <div class="bg-white p-6 rounded-lg">
+                            <img class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded w-full object-cover object-center mb-6" src="https://futurecio.tech/wp-content/uploads/2020/09/pexels-photo-3840870.jpeg " alt="Image Size 720x400">
+                            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">Course</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Customer Engagement Operations Level 2</h2>
+                            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -155,7 +163,7 @@
                         </a>
                     </div>
                     <div class="px-5 py-2">
-                        <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                        <a href="{{url('contact')}}" class="text-base leading-6 text-gray-500 hover:text-gray-900">
                             Contact Form
                         </a>
                     </div>

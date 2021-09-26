@@ -1,5 +1,6 @@
 @extends('layout.user')
 @section('content')
+
     <div class="text-center">
         <div class="my-7"></div>
         <h2 class="text-red-900 text-5xl font-bold">Programmes</h2>
