@@ -25,14 +25,18 @@
             </div>
         </div>
         <div class="flex flex-col md:flex-row hidden md:block -mx-2">
-            <a href="#" class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Home</a>
-            <a href="#" class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Dashboard</a>
-            <a href="#" class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Contact</a>
+            <a href="{{url('admin')}}" class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Home</a>
+            <a href="{{url('dashboard')}}" class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Dashboard</a>
+            <a href="{{url('list')}}" class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Contact</a>
         </div>
     </div>
 </nav>
-<main>
-    @yield('content')
-</main>
+<div class="w-full h-9/12 flex justify-center items-center bg-gray-300">
+
+    <div class="h-screen w-screen">
+        @yield("content")
+    </div>
+
+</div>
 </body>
 </html>
