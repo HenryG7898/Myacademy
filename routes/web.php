@@ -37,7 +37,10 @@ Route::get('/term', function () {
 Route::get('/admin', function () {
     return view('admin.home');
 });
-Route::get('/admin/dashboard', function () {
+Route::get('/list', function () {
+    return view('admin.contactlist');
+});
+Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 
@@ -53,3 +56,7 @@ route::get('Apply',[\App\Http\Controllers\Coursecontroller::class,'view'])->name
 
 route::get('contact',[\App\Http\Controllers\Contactcontroller::class,'view'])->name('contact');
 route::post('contact',[\App\Http\Controllers\Contactcontroller::class, 'contacts']);
+Auth::routes();
+
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

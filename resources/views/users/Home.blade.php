@@ -42,10 +42,9 @@
                                 <!-- card body -->
                                 <div class="p-6 bg-white border-b border-gray-200">
                                     <!-- content goes here -->
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                    when an unknown printer took a galley of type and scrambled it to make a type
-                                    specimen book.
+                                    Are you looking for a new skill or do you want to continue develop
+                                    more to your career skills.
+                                    For more Information click the button below to send message regarding base on your decision.
                                 </div>
 
                                 <!-- card footer -->
@@ -71,10 +70,9 @@
                                 <!-- card body -->
                                 <div class="p-6 bg-gray-800 border-b border-gray-600">
                                     <!-- content goes here -->
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                    when an unknown printer took a galley of type and scrambled it to make a type
-                                    specimen book.
+                                    Would you like to be a Technician, Accountants, Software Developer
+                                    or Agent at Call Center.
+                                    For more Information click the button below to send message regarding base on your decision.
                                 </div>
 
                                 <!-- card footer -->
@@ -135,17 +133,17 @@
                     </div>
                     <div class="xl:w-1/3 md:w-1/2 p-4">
                         <div class="bg-white p-6 rounded-lg">
-                            <img class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded w-full object-cover object-center mb-6" src="https://futurecio.tech/wp-content/uploads/2020/09/pexels-photo-3840870.jpeg " alt="Image Size 720x400">
+                            <img class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded w-full object-cover object-center mb-6" src="https://academics.lmu.edu/media/lmuacademics/extension/images/full-stack-developer.jpg " alt="Image Size 720x400">
                             <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">Course</h3>
-                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Customer Engagement Operations Level 2</h2>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Software Progamming Operation Level 3</h2>
                             <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
                         </div>
                     </div>
                     <div class="xl:w-1/3 md:w-1/2 p-4">
                         <div class="bg-white p-6 rounded-lg">
-                            <img class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded w-full object-cover object-center mb-6" src="https://futurecio.tech/wp-content/uploads/2020/09/pexels-photo-3840870.jpeg " alt="Image Size 720x400">
+                            <img class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded w-full object-cover object-center mb-6" src="https://www.manateetech.edu/wp-content/uploads/2017/05/IMG_7393-e1495565046548.jpg " alt="Image Size 720x400">
                             <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">Course</h3>
-                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Customer Engagement Operations Level 2</h2>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Air Condition & Refrigeration Level 2</h2>
                             <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
                         </div>
                     </div>
