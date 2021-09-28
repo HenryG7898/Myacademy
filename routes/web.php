@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', function () {
-    return view('users.Home');
+    return view('auth.Home');
 });
 //Route::get('/Apply', function () {
 //    return view('users.Applyform');
@@ -45,18 +45,17 @@ Route::get('/dashboard', function () {
 });
 
 
-route::get('Signup',[\App\Http\Controllers\Registercontroller::class, 'view'])->name('users.register');
+route::get('Signup',[\App\Http\Controllers\Registercontroller::class, 'view'])->name('register');
 route::post('Signup',[\App\Http\Controllers\Registercontroller::class, 'register']);
 
 route::get('Login',[\App\Http\Controllers\LoginController::class,'view'])->name('Login');
 route::post('Login',[\App\Http\Controllers\LoginController::class, 'login']);
+route::post('Logout',[\App\Http\Controllers\Logout::class,'logout'])->name('Logout');
 
 route::get('Apply',[\App\Http\Controllers\Coursecontroller::class,'view'])->name('ApplyForm');
 //route::post('Apply',[\App\Http\Controllers\Coursecontroller::class, 'login']);
 
 route::get('contact',[\App\Http\Controllers\Contactcontroller::class,'view'])->name('contact');
 route::post('contact',[\App\Http\Controllers\Contactcontroller::class, 'contacts']);
-Auth::routes();
 
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+route::auth();
