@@ -40,9 +40,9 @@ Route::get('/admin', function () {
 Route::get('/list', function () {
     return view('admin.contactlist');
 });
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-});
+//Route::get('/dashboard', function () {
+//    return view('admin.dashboard');
+//});
 
 
 route::get('Signup',[\App\Http\Controllers\Registercontroller::class, 'view'])->name('register');
@@ -59,3 +59,9 @@ route::get('contact',[\App\Http\Controllers\Contactcontroller::class,'view'])->n
 route::post('contact',[\App\Http\Controllers\Contactcontroller::class, 'contacts']);
 
 route::auth();
+
+Route::post("/course-selection/apply", [\App\Http\Controllers\Coursecontroller::class, "apply"])->name("Course-Selection-Apply");
+
+//Admin
+Route::get("Dashboard", [\App\Http\Controllers\Admindashboard::class, "index"])->name("Dashboard");
+

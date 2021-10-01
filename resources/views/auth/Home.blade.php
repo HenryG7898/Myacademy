@@ -13,7 +13,8 @@
                     <h1 class="text-white text-6xl font-bold">Welcome To Henry's Academy</h1>
                         <div class="my-3"></div>
 
-                    <h2 class="text-red-900 text-5xl font-bold">{{Auth::user()->Fname}}</h2>
+                    <h2 class="text-red-900 text-5xl font-bold">{{Auth()->user()->Fname}} {{Auth()->user()->Mname}}
+                        {{Auth()->user()->Lname}}</h2>
 
                     </div>
                 </div>
