@@ -21,6 +21,8 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 
+@auth
+
 
     <div class="bg-black">
 
@@ -35,7 +37,7 @@
                                  src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
                                  alt="">
                         </div>
-                        <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">Jane Doe</h1>
+                        <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">{{Auth()->user()->Fname}} {{Auth()->user()->Mname}} {{Auth()->user()->Lname}}</h1>
                         <h3 class="text-gray-600 font-lg text-semibold leading-6">Owner at Her Company Inc.</h3>
                         <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">Lorem ipsum dolor sit amet
                             consectetur adipisicing elit.
@@ -45,7 +47,7 @@
                             <li class="flex items-center py-3">
                                 <span>Status</span>
                                 <span class="ml-auto"><span
-                                        class="bg-green-500 py-1 px-2 rounded text-white text-sm">Active</span></span>
+                                        class="bg-green-500 py-1 px-2 rounded text-white text-sm">{{Auth::user()->Status}}</span></span>
                             </li>
                             <li class="flex items-center py-3">
                                 <span>Member since</span>
@@ -75,37 +77,37 @@
                             <div class="grid md:grid-cols-2 text-sm">
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">First Name</div>
-                                    <div class="px-4 py-2">Jane</div>
+                                    <div class="px-4 py-2">{{Auth::user()->Fname}}</div>
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">Last Name</div>
-                                    <div class="px-4 py-2">Doe</div>
+                                    <div class="px-4 py-2">{{auth::user()->Lname}}</div>
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">Gender</div>
-                                    <div class="px-4 py-2">Female</div>
+                                    <div class="px-4 py-2">{{auth::user()->Gender}}</div>
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">Contact No.</div>
-                                    <div class="px-4 py-2">+11 998001001</div>
-                                </div>
-                                <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">Current Address</div>
-                                    <div class="px-4 py-2">Beech Creek, PA, Pennsylvania</div>
+                                    <div class="px-4 py-2">{{auth::user()->telephone}}</div>
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">Permanant Address</div>
-                                    <div class="px-4 py-2">Arlington Heights, IL, Illinois</div>
+                                    <div class="px-4 py-2">{{auth::user()->address}}</div>
+                                </div>
+                                <div class="grid grid-cols-2">
+                                    <div class="px-4 py-2 font-semibold">Parish</div>
+                                    <div class="px-4 py-2">{{auth::user()->parish}}</div>
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">Email.</div>
                                     <div class="px-4 py-2">
-                                        <a class="text-blue-800" href="mailto:jane@example.com">jane@example.com</a>
+                                        <a class="text-blue-800" href="mailto:jane@example.com">{{auth::user()->email}}</a>
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">Birthday</div>
-                                    <div class="px-4 py-2">Feb 06, 1998</div>
+                                    <div class="px-4 py-2">{{Auth::user()->DOB}}</div>
                                 </div>
                             </div>
                         </div>
@@ -184,4 +186,5 @@
             </div>
         </div>
     </div>
+@endauth
 @endsection

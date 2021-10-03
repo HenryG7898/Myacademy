@@ -17,7 +17,7 @@ class Registercontroller extends Controller
             'Mname' =>['required','string'],
             'Gender' =>['required','string'],
             'parish' =>['required','string'],
-//            'country' =>['required','string'],
+            'DOB' =>['required'],
             'address' =>['required','string'],
             'telephone' =>['required','string','numeric'],
             'trn' =>['required','string','numeric'],
@@ -33,7 +33,7 @@ class Registercontroller extends Controller
         $cus->Gender = $request->Gender;
         $cus->address = $request->address;
         $cus->parish = $request->parish;
-//        $cus->country = $request->country;
+        $cus->DOB = $request->DOB;
         $cus->telephone = $request->telephone;
         $cus->trn = $request->trn;
         $cus->password = Hash::make($request->password);

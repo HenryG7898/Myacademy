@@ -1,11 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+//use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class Logincontroller extends Controller
 {
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
     public function view(){
         return view('users.login');
     }
@@ -14,9 +18,12 @@ class Logincontroller extends Controller
             'email' => ['required','email'],
             'password' => ['required'],
         ]);
-
-        if(auth::attempt($valid)){
+//dd(auth::check());
+//        dd($valid);
+        if(Auth::attempt($valid)){
             $request->session()->regenerate();
+//            dd(auth::user());
+
             return redirect()->intended('/home');
         }
         return back()->withErrors([
