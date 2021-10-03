@@ -22,6 +22,7 @@ class User extends Authenticatable
         'Mname',
         'Lname',
         'Gender',
+        'DOB',
         'address',
         'parish',
         'telephone',

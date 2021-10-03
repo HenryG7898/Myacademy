@@ -50,7 +50,9 @@
                 </div>
                 <label for="email" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">E-mail</label>
                 <input id="email" type="email" name="email" placeholder="john.doe@company.com" autocomplete="email" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
-                <span class="text-red-700 text-2xs">@error('email') {{$message}} @enderror</span>
+                <label for="DOB" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Birthday</label>
+                <input id="DOB" type="date" name="DOB" placeholder="" autocomplete="email" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
+                <span class="text-red-700 text-2xs">@error('DOB') {{$message}} @enderror</span>
                 <label for="address" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Address</label>
                 <input id="address" type="text" name="address" placeholder="Church Pen, Old Harbour" autocomplete="email" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
                 <span class="text-red-700 text-2xs">@error('address') {{$message}} @enderror</span>

@@ -28,9 +28,9 @@ Route::get('/home', function () {
 Route::get('/profile2', function () {
     return view('admin.profile');
 });
-Route::get('/profile', function () {
-    return view('users.profile');
-});
+//Route::get('/profile', function () {
+//    return view('users.profile');
+//});
 Route::get('/term', function () {
     return view('users.term&condition');
 });
@@ -53,7 +53,12 @@ route::post('Login',[\App\Http\Controllers\LoginController::class, 'login']);
 route::post('Logout',[\App\Http\Controllers\Logout::class,'logout'])->name('Logout');
 
 route::get('Apply',[\App\Http\Controllers\Coursecontroller::class,'view'])->name('ApplyForm');
-//route::post('Apply',[\App\Http\Controllers\Coursecontroller::class, 'login']);
+route::get('Profile',[\App\Http\Controllers\Profilecontroller::class,'view'])->name('Profile');
+Route::get("Submession", [\App\Http\Controllers\Submession::class, "index"])->name("Subbmession");
+Route::post("Qualification", [\App\Http\Controllers\Submession::class, "qualificat"])->name("Qualification");
+Route::post("Education", [\App\Http\Controllers\Submession::class, "educat"])->name("Education");
+Route::post("Experience", [\App\Http\Controllers\Submession::class, "company"])->name("Experience");
+
 
 route::get('contact',[\App\Http\Controllers\Contactcontroller::class,'view'])->name('contact');
 route::post('contact',[\App\Http\Controllers\Contactcontroller::class, 'contacts']);
