@@ -54,6 +54,7 @@ route::post('Logout',[\App\Http\Controllers\Logout::class,'logout'])->name('Logo
 
 route::get('Apply',[\App\Http\Controllers\Coursecontroller::class,'view'])->name('ApplyForm');
 route::get('Profile',[\App\Http\Controllers\Profilecontroller::class,'view'])->name('Profile');
+route::post('Profile',[\App\Http\Controllers\Profilecontroller::class,'store']);
 Route::get("Submession", [\App\Http\Controllers\Submession::class, "index"])->name("Subbmession");
 Route::post("Qualification", [\App\Http\Controllers\Submession::class, "qualificat"])->name("Qualification");
 Route::post("Education", [\App\Http\Controllers\Submession::class, "educat"])->name("Education");

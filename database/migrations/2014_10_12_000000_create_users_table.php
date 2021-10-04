@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->date('DOB');
             $table->string('address');
             $table->string('parish');
-//            $table->string('country');
+           $table->string('Profile')->default('default');
             $table->string('telephone');
             $table->string('trn');
             $table->string('Status')->default('Student');
@@ -31,16 +31,19 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-        });
-    }
+         });
+      }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('users');
-    }
+
+
+        /**
+         * Reverse the migrations.
+         *
+         * @return void
+         */
+        public function down()
+        {
+            Schema::dropIfExists('users');
+        }
+
 }

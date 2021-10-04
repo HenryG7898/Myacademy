@@ -26,7 +26,7 @@ class User extends Authenticatable
         'address',
         'parish',
         'telephone',
-//        'country',
+       'Profile',
         'trn',
         'email',
         'password',
