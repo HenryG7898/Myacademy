@@ -26,28 +26,33 @@
 
     <div class="bg-black">
 
-               <div class="container mx-auto my-5 p-5">
+               <div class="container p-5 mx-auto my-5">
             <div class="md:flex no-wrap md:-mx-2 ">
                 <!-- Left Side -->
                 <div class="w-full md:w-3/12 md:mx-2">
                     <!-- Profile Card -->
-                    <div class="bg-white p-3 border-t-4 border-green-400">
-                        <div class="image overflow-hidden">
-                            <img class="h-auto w-full mx-auto"
-                                 src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
-                                 alt="">
+                    <div class="p-3 bg-white border-t-4 border-green-400">
+                        <div class="overflow-hidden image">
+                            <img class="w-full h-auto mx-auto"
+                                 src="{{ asset('/public/uploads/profiles/default.jpg') }}"
+                                 alt="Image">
                         </div>
-                        <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">{{Auth()->user()->Fname}} {{Auth()->user()->Mname}} {{Auth()->user()->Lname}}</h1>
-                        <h3 class="text-gray-600 font-lg text-semibold leading-6">Owner at Her Company Inc.</h3>
-                        <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">Lorem ipsum dolor sit amet
+                        <form action="{{ url('Profile') }}" method="POST">
+                            @csrf
+                            <input type="file" name="Profile">
+                            <button type="submit">Upload</button>
+                        </form>
+                        <h1 class="my-1 text-xl font-bold leading-8 text-gray-900">{{Auth()->user()->Fname}} {{Auth()->user()->Mname}} {{Auth()->user()->Lname}}</h1>
+                        <h3 class="leading-6 text-gray-600 font-lg text-semibold">Owner at Her Company Inc.</h3>
+                        <p class="text-sm leading-6 text-gray-500 hover:text-gray-600">Lorem ipsum dolor sit amet
                             consectetur adipisicing elit.
                             Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non deserunt</p>
                         <ul
-                            class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
+                            class="px-3 py-2 mt-3 text-gray-600 bg-gray-100 divide-y rounded shadow-sm hover:text-gray-700 hover:shadow">
                             <li class="flex items-center py-3">
                                 <span>Status</span>
                                 <span class="ml-auto"><span
-                                        class="bg-green-500 py-1 px-2 rounded text-white text-sm">{{Auth::user()->Status}}</span></span>
+                                        class="px-2 py-1 text-sm text-white bg-green-500 rounded">{{Auth::user()->Status}}</span></span>
                             </li>
                             <li class="flex items-center py-3">
                                 <span>Member since</span>
@@ -59,11 +64,11 @@
                     <div class="my-4"></div>
                 </div>
                 <!-- Right Side -->
-                <div class="w-full md:w-9/12 mx-2 h-64">
+                <div class="w-full h-64 mx-2 md:w-9/12">
                     <!-- Profile tab -->
                     <!-- About Section -->
-                    <div class="bg-white p-3 shadow-sm rounded-sm">
-                        <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
+                    <div class="p-3 bg-white rounded-sm shadow-sm">
+                        <div class="flex items-center space-x-2 font-semibold leading-8 text-gray-900">
                         <span clas="text-green-500">
                             <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">
@@ -74,7 +79,7 @@
                             <span class="tracking-wide">About</span>
                         </div>
                         <div class="text-gray-700">
-                            <div class="grid md:grid-cols-2 text-sm">
+                            <div class="grid text-sm md:grid-cols-2">
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">First Name</div>
                                     <div class="px-4 py-2">{{Auth::user()->Fname}}</div>
@@ -112,7 +117,7 @@
                             </div>
                         </div>
                         <button
-                            class="block w-full text-blue-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4">
+                            class="block w-full p-3 my-4 text-sm font-semibold text-blue-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs">
                             Edit Information</button>
                     </div>
                     <!-- End of about section -->
@@ -120,11 +125,11 @@
                     <div class="my-4"></div>
 
                     <!-- Experience and education -->
-                    <div class="bg-white p-3 shadow-sm rounded-sm">
+                    <div class="p-3 bg-white rounded-sm shadow-sm">
 
                         <div class="grid grid-cols-2">
                             <div>
-                                <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
+                                <div class="flex items-center mb-3 space-x-2 font-semibold leading-8 text-gray-900">
                                 <span clas="text-green-500">
                                     <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          stroke="currentColor">
@@ -134,27 +139,27 @@
                                 </span>
                                     <span class="tracking-wide">Experience</span>
                                 </div>
-                                <ul class="list-inside space-y-2">
+                                <ul class="space-y-2 list-inside">
                                     <li>
                                         <div class="text-teal-600">Owner at Her Company Inc.</div>
-                                        <div class="text-gray-500 text-xs">March 2020 - Now</div>
+                                        <div class="text-xs text-gray-500">March 2020 - Now</div>
                                     </li>
                                     <li>
                                         <div class="text-teal-600">Owner at Her Company Inc.</div>
-                                        <div class="text-gray-500 text-xs">March 2020 - Now</div>
+                                        <div class="text-xs text-gray-500">March 2020 - Now</div>
                                     </li>
                                     <li>
                                         <div class="text-teal-600">Owner at Her Company Inc.</div>
-                                        <div class="text-gray-500 text-xs">March 2020 - Now</div>
+                                        <div class="text-xs text-gray-500">March 2020 - Now</div>
                                     </li>
                                     <li>
                                         <div class="text-teal-600">Owner at Her Company Inc.</div>
-                                        <div class="text-gray-500 text-xs">March 2020 - Now</div>
+                                        <div class="text-xs text-gray-500">March 2020 - Now</div>
                                     </li>
                                 </ul>
                             </div>
                             <div>
-                                <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
+                                <div class="flex items-center mb-3 space-x-2 font-semibold leading-8 text-gray-900">
                                 <span clas="text-green-500">
                                     <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          stroke="currentColor">
@@ -167,14 +172,14 @@
                                 </span>
                                     <span class="tracking-wide">Education</span>
                                 </div>
-                                <ul class="list-inside space-y-2">
+                                <ul class="space-y-2 list-inside">
                                     <li>
                                         <div class="text-teal-600">Masters Degree in Oxford</div>
-                                        <div class="text-gray-500 text-xs">March 2020 - Now</div>
+                                        <div class="text-xs text-gray-500">March 2020 - Now</div>
                                     </li>
                                     <li>
                                         <div class="text-teal-600">Bachelors Degreen in LPU</div>
-                                        <div class="text-gray-500 text-xs">March 2020 - Now</div>
+                                        <div class="text-xs text-gray-500">March 2020 - Now</div>
                                     </li>
                                 </ul>
                             </div>
