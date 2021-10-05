@@ -53,6 +53,6 @@ class User extends Authenticatable
     protected $primaryKey = 'student_id';
 
     public function user(){
-
+        $this->belongsTo(Profile::class, 'student_id', 'profile_id');
     }
 }

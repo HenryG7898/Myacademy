@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 class Profilecontroller extends Controller
 {
     public function view(){
-        return view('users.profile');
+        $users = Profile::where('Profile')->get();
+        return view('users.profile',['users'=>$users]);
     }
 
     public function store(Request $request){
@@ -18,22 +19,26 @@ class Profilecontroller extends Controller
             'Profile' => 'required','mimes:png,jpg,jpeg','max:5048'
         ]);
 
+        $path = new Profile();
+        $path->Profile = $request->Profile;
+        $path->student_id = Auth::id();
+        $path->save();
+        $currentImage = "/public/" . uniqid('', true) . "." . $request->file("Profile")->getClientOriginalExtension();
+        $path = $request->file('Profile')->storeAs('/',$currentImage);
+//dd($currentImage);
+        echo $currentImage;
+//        $path->save();
 
-        $pro = new Profile();
-         $pro->Profile = $filename;
-         $pro->student_id = Auth::id();
-            if($request->hasFile('Profile')){
-                $file = $request->file('Profile');
-                $extention = $file->getClientOrignalExtension();
-                $filename = time().'-'.$extention;
-                $file->move('/public/uploads/profiles/'. $filename);
-                $pro->proflie = $filename;
-            }
-        $pro->save();
+//        if($request->hasFile('Profile')){
+//            $file = $request->file('Profile');
+//            $extenstion =$file->getClientOriginalExtension();
+//            $filename = time().'.'.$extenstion;
+//            $file->move('public/',$filename);
+//            $path->Profile = $filename;
+//        }
+//
+//        $path->save();
 
-
-        // $newImageName = $request->Profile->extension();
-        // dd($newImageName);
-
+        return view('users.profile', compact('path',),['path'=>$path]);
     }
 }

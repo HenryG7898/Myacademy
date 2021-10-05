@@ -15,4 +15,8 @@ class Profile extends Model
         'Profile',
         'student_id',
     ];
+
+    public function profile(){
+        $this->belongsTo(User::class,'student_id', 'student_id');
+    }
 }

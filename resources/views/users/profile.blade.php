@@ -29,15 +29,16 @@
                <div class="container p-5 mx-auto my-5">
             <div class="md:flex no-wrap md:-mx-2 ">
                 <!-- Left Side -->
-                <div class="w-full md:w-3/12 md:mx-2">
+                <div class="w-full md:w-4/12 md:mx-2">
                     <!-- Profile Card -->
                     <div class="p-3 bg-white border-t-4 border-green-400">
                         <div class="overflow-hidden image">
-                            <img class="w-full h-auto mx-auto"
-                                 src="{{ asset('/public/uploads/profiles/default.jpg') }}"
+
+                            <img class="w-screen h-96 object-cover z-10 rounded-full mx-auto"
+                                 src="{{ asset('/storage/') }}"
                                  alt="Image">
                         </div>
-                        <form action="{{ url('Profile') }}" method="POST">
+                        <form action="{{ url('Profile') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="file" name="Profile">
                             <button type="submit">Upload</button>

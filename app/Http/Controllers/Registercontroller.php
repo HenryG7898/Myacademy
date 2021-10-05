@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 class Registercontroller extends Controller
 {
@@ -38,6 +39,13 @@ class Registercontroller extends Controller
         $cus->trn = $request->trn;
         $cus->password = Hash::make($request->password);
         $cus->save();
+
+        if(Auth::attempt($validate)){
+            $request->session()->regenerate();
+//            dd(auth::user());
+
+            return redirect()->intended('/home');
+        }
 
         return  redirect('Login');
     }
