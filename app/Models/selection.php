@@ -21,4 +21,7 @@ class selection extends Model
     public function course() {
         return $this->belongsTo(applycourse::class,'course_id','course_id');
     }
+    public function profile() {
+        return $this->belongsTo(Profile::class,'student_id','student_id');
+    }
 }

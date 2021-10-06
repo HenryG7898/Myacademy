@@ -10,7 +10,7 @@ class Admindashboard extends Controller
 {
     public function index(){
 
-        $course = selection::with(['user','course'])->get();
+        $course = selection::with(['user','course','profile'])->get();
         return view('admin.dashboard',compact('course'));
     }
 }

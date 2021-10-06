@@ -33,10 +33,17 @@
                     <!-- Profile Card -->
                     <div class="p-3 bg-white border-t-4 border-green-400">
                         <div class="overflow-hidden image">
+{{--                            @forelse ($currentImage as $item)--}}
+                            @isset($path)
+
+
 
                             <img class="w-screen h-96 object-cover z-10 rounded-full mx-auto"
-                                 src="{{ asset('/storage/') }}"
+                                 src="{{ asset('/storage/'.$path) }}"
                                  alt="Image">
+                            @endisset
+{{--                            @empty--}}
+{{--                            @endforelse--}}
                         </div>
                         <form action="{{ url('Profile') }}" method="POST" enctype="multipart/form-data">
                             @csrf
