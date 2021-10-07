@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\contact;
+use App\Models\selection;
 use Illuminate\Http\Request;
 
 class Contactcontroller extends Controller
@@ -25,6 +26,16 @@ class Contactcontroller extends Controller
         $cus->describe = $request->describe;
         $cus->save();
 
-        return redirect('users.Home');
+        return redirect('home');
     }
+    public function list(){
+        $contact = contact::all();
+        return view('admin.contactlist',['contact'=>$contact]);
+    }
+//    public function deletelist($id){
+//
+//        $course = contact::where('contact_id ',$id)->get();
+//        $course->delete();
+//        return view('admin.dashboard');
+//    }
 }

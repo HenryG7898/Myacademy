@@ -37,9 +37,9 @@ Route::get('/term', function () {
 Route::get('/admin', function () {
     return view('admin.home');
 });
-Route::get('/list', function () {
-    return view('admin.contactlist');
-});
+//Route::get('/list', function () {
+//    return view('admin.contactlist');
+//});
 //Route::get('/dashboard', function () {
 //    return view('admin.dashboard');
 //});
@@ -64,10 +64,14 @@ Route::post("Experience", [\App\Http\Controllers\Submession::class, "company"])-
 route::get('contact',[\App\Http\Controllers\Contactcontroller::class,'view'])->name('contact');
 route::post('contact',[\App\Http\Controllers\Contactcontroller::class, 'contacts']);
 
+
 route::auth();
 
 Route::post("/course-selection/apply", [\App\Http\Controllers\Coursecontroller::class, "apply"])->name("Course-Selection-Apply");
 
 //Admin
 Route::get("Dashboard", [\App\Http\Controllers\Admindashboard::class, "index"])->name("Dashboard");
+//Route::get("deleteapp/{id}", [\App\Http\Controllers\Admindashboard::class, "deleteapplicants"]);
+//Route::get("deletelist/{id}", [\App\Http\Controllers\Contactcontroller::class, "deletelist"]);
 
+route::get('list',[\App\Http\Controllers\Contactcontroller::class, 'list']);

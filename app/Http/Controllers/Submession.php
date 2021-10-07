@@ -11,7 +11,8 @@ use Illuminate\Http\Request;
 class Submession extends Controller
 {
     public function index(){
-        return view('users.submession');
+
+        return view('users.submession', );
     }
 
     public function qualificat(Request $request){
@@ -46,5 +47,4 @@ class Submession extends Controller
         $exp->save();
         return back();
     }
-
 }

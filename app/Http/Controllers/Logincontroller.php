@@ -11,24 +11,42 @@ class Logincontroller extends Controller
 //        $this->middleware('auth');
 //    }
     public function view(){
+
+//        if(auth()->user()->	Status == 'Student'){
+//            return view('users.login'); /*this would be user home page*/
+//        }else
+//        {
+//            return view('users.login'); /*this would be admin home page*/
+//        }
         return view('users.login');
+
     }
     public function login(Request $request){
         $valid = $request->validate([
             'email' => ['required','email'],
             'password' => ['required'],
         ]);
+
+        if(Auth::attempt($valid)){
+            if (Auth::user()->Status == 'Student') {
+                return view ('auth.Home');
+            }
+            return view('admin.home');
+        }
 //dd(auth::check());
 //        dd($valid);
-        if(Auth::attempt($valid)){
-            $request->session()->regenerate();
-//            dd(auth::user());
+//        if(Auth::attempt(['email' => 'Admin@gmail.com', 'password' => 12345678, 'Status' => 'Admin'])){
+//            $request->session()->regenerate();
+////            dd(auth::user());
+//
+//            return redirect()->intended('');
+//        }elseif(Auth::attempt($valid)){
+//            $request->session()->regenerate();
+//            return view('auth.Home');
+//        }
 
-            return redirect()->intended('/home');
-        }
-        return back()->withErrors([
-            'email'=> 'The provided credentials do not match our records'
-        ]);
+
+
 
     }
 //    public function logout(Request $request){

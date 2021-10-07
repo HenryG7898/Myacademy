@@ -18,5 +18,7 @@ class Experience extends Model
         'End_date',
     ];
 
-
+    public function user(){
+        $this->belongsTo(User::class, 'student_id', 'student_id');
+    }
 }

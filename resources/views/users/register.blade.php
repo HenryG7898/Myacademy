@@ -1,5 +1,6 @@
 @extends('layout.user')
 @section('content')
+    <div class="bg-gray-600">
     <div class="grid  place-items-center">
         <div class="w-11/12 p-12 bg-white sm:w-8/12 md:w-1/2 lg:w-5/12 shadow-lg">
             <h1 class="text-2xl font-semibold text-center "> Sign-Up Form</h1>
@@ -92,5 +93,6 @@
                 <p class="flex justify-between inline-block mt-4 text-xs text-gray-500 cursor-pointer hover:text-black">Already registered?</p>
             </form>
         </div>
+    </div>
     </div>
 @endsection

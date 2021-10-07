@@ -22,8 +22,6 @@
 
 
 @auth
-
-
     <div class="bg-black">
 
                <div class="container p-5 mx-auto my-5">
@@ -34,14 +32,15 @@
                     <div class="p-3 bg-white border-t-4 border-green-400">
                         <div class="overflow-hidden image">
 {{--                            @forelse ($currentImage as $item)--}}
-                            @isset($path)
 
-
-
+                            @foreach($user as $index => $value)
+                                @if($value['student_id']== auth()->user()->student_id)
                             <img class="w-screen h-96 object-cover z-10 rounded-full mx-auto"
-                                 src="{{ asset('/storage/'.$path) }}"
+                                 src="{{$value['Profile']}}"
                                  alt="Image">
-                            @endisset
+                                @endif
+                            @endforeach
+
 {{--                            @empty--}}
 {{--                            @endforelse--}}
                         </div>
@@ -147,7 +146,10 @@
                                 </span>
                                     <span class="tracking-wide">Experience</span>
                                 </div>
+
                                 <ul class="space-y-2 list-inside">
+
+
                                     <li>
                                         <div class="text-teal-600">Owner at Her Company Inc.</div>
                                         <div class="text-xs text-gray-500">March 2020 - Now</div>
@@ -164,6 +166,7 @@
                                         <div class="text-teal-600">Owner at Her Company Inc.</div>
                                         <div class="text-xs text-gray-500">March 2020 - Now</div>
                                     </li>
+
                                 </ul>
                             </div>
                             <div>
@@ -181,17 +184,21 @@
                                     <span class="tracking-wide">Education</span>
                                 </div>
                                 <ul class="space-y-2 list-inside">
+
                                     <li>
-                                        <div class="text-teal-600">Masters Degree in Oxford</div>
-                                        <div class="text-xs text-gray-500">March 2020 - Now</div>
+                                        <div class="text-teal-600"></div>
+                                        <div class="text-xs text-gray-500"></div>
                                     </li>
-                                    <li>
-                                        <div class="text-teal-600">Bachelors Degreen in LPU</div>
-                                        <div class="text-xs text-gray-500">March 2020 - Now</div>
-                                    </li>
+
                                 </ul>
                             </div>
                         </div>
+                        <a href="{{ url('Submession') }}"
+                            class="block w-full p-3 my-4 text-sm text-center font-semibold text-blue-800 rounded-lg hover:bg-red-700 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs">
+                            Edit Information</a>
+                    </div>
+                    </div>
+
                         <!-- End of Experience and education grid -->
                     </div>
                     <!-- End of profile tab -->

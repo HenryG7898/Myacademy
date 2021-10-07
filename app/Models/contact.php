@@ -9,5 +9,7 @@ class contact extends Model
 {
     use HasFactory;
 
+    public $table ='contacts';
+
     protected $primaryKey = 'Contact_id';
 }

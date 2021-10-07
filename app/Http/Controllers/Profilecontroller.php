@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Experience;
 use App\Models\Profile;
 use App\Models\User;
 use Auth;
@@ -10,8 +11,14 @@ use Illuminate\Http\Request;
 class Profilecontroller extends Controller
 {
     public function view(){
-        $currentImage = Profile::with('user');
-        return view('users.profile',['currentImage'=>$currentImage]);
+//        $currentImage = Profile::with('user');
+        $users = Experience::with('user');
+
+        $user = Profile::get();
+//        $users->get(auth()->user()->incrementing);
+//        $users->get(Auth::id());
+//        dd($users);
+        return view('users.profile',['users'=>$users,'user'=>$user]);
     }
 
     public function store(Request $request){
@@ -19,12 +26,15 @@ class Profilecontroller extends Controller
             'Profile' => 'required','mimes:png,jpg,jpeg','max:5048'
         ]);
 
-        $path = new Profile();
-        $path->Profile = $request->Profile;
+        $pathpfp = $request->file('Profile')->store('public');
+
+        $path = new Profile;
+        $path->Profile = $pathpfp;
         $path->student_id = Auth::id();
         $path->save();
-        $currentImage = "/public/" . uniqid('', true) . "." . $request->file("Profile")->getClientOriginalExtension();
-        $path = $request->file('Profile')->storeAs('/',$currentImage);
+//        $currentImage = "/public/" . uniqid('', true) . "." . $request->file("Profile")->getClientOriginalExtension();
+//        $currentImage = "/public/" . uniqid('', true) . "." . $request->file("Profile")->getClientOriginalExtension();
+
 ////dd($currentImage);
 //        echo $currentImage;
 //        $path->save();
@@ -39,6 +49,7 @@ class Profilecontroller extends Controller
 ////
 //        $path->save();
 //
-        return view('users.profile', compact('path','currentImage'),['path'=>$path]);
+        return back()->with('path');
+
     }
 }
